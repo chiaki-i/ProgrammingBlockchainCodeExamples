@@ -8,6 +8,8 @@ namespace PrivateKey
     {
         static void Main()
         {
+            RandomUtils.Random = new UnsecureRandom(); // set the random number generator.
+
             Key privateKey = new Key(); // generate a random private key
             BitcoinSecret mainNetPrivateKey = privateKey.GetBitcoinSecret(Network.Main);  // get our private key for the mainnet
             BitcoinSecret testNetPrivateKey = privateKey.GetBitcoinSecret(Network.TestNet);  // get our private key for the testnet
